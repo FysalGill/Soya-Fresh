@@ -35,24 +35,37 @@
 
   .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; max-width: 1000px; margin: 0 auto; }
   .price-card {
-    background: #fff; border: 1px solid #e2ece2; border-radius: 16px; padding: 36px 30px;
+    background: #fff; border: 1px solid #e2ece2; border-radius: 16px;
     text-align: center; box-shadow: 0 4px 18px rgba(30,86,49,0.06);
-    transition: transform 0.2s, box-shadow 0.2s; position: relative;
+    transition: transform 0.2s, box-shadow 0.2s; position: relative; overflow: hidden;
+    display: flex; flex-direction: column;
   }
   .price-card:hover { transform: translateY(-5px); box-shadow: 0 14px 32px rgba(30,86,49,0.14); }
-  .price-card h3 { color: #1e5631; font-size: 22px; margin-bottom: 6px; }
+
+  /* Product image area */
+  .card-media { height: 170px; position: relative; background-size: cover; background-position: center; background-repeat: no-repeat; }
+  .card-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(20,60,35,0.25), rgba(20,60,35,0.75)); }
+  .card-media .tag {
+    position: absolute; top: 14px; left: 14px; z-index: 2;
+    display: inline-block; background: #ffd66b; color: #6b4e00;
+    font-size: 12px; font-weight: 700; padding: 5px 14px; border-radius: 20px;
+    letter-spacing: 0.5px; text-transform: uppercase;
+  }
+  .card-media .tag.blue { background: #cfe3ff; color: #1a4a8a; }
+  .card-media .media-name { position: absolute; bottom: 14px; left: 18px; right: 18px; z-index: 2; color: #fff; font-size: 20px; font-weight: 800; letter-spacing: -0.3px; }
+
+  .media-natural   { background-image: url('https://images.unsplash.com/photo-1563636619-e9143da7973b?auto=format&fit=crop&w=900&q=80'); }
+  .media-chocolate { background-image: url('https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=900&q=80'); }
+  .media-elaichi   { background-image: url('https://images.unsplash.com/photo-1615485500704-8e990f9900f7?auto=format&fit=crop&w=900&q=80'); }
+
+  .card-body { padding: 26px 30px 34px; flex: 1; display: flex; flex-direction: column; }
   .price-card .desc { color: #6a7a6c; font-size: 14px; margin-bottom: 18px; }
   .price-card .price { font-size: 44px; font-weight: 800; color: #1e5631; line-height: 1.1; }
   .price-card .price small { font-size: 17px; font-weight: 600; color: #5a6b5c; }
   .price-card ul { list-style: none; text-align: left; margin: 24px 0 26px; }
   .price-card ul li { padding: 8px 0 8px 28px; position: relative; color: #4a5a4c; font-size: 15px; }
   .price-card ul li::before { content: "✓"; position: absolute; left: 0; color: #2e7d4f; font-weight: 800; }
-  .tag {
-    display: inline-block; background: #ffd66b; color: #6b4e00;
-    font-size: 12px; font-weight: 700; padding: 5px 14px; border-radius: 20px;
-    letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 14px;
-  }
-  .tag.blue { background: #cfe3ff; color: #1a4a8a; }
+  .price-card .btn { margin-top: auto; }
 
   .btn {
     display: inline-block; background: #1e5631; color: #fff;
@@ -93,48 +106,60 @@
   <div class="grid">
 
     <div class="price-card">
-      <span class="tag">Best Value</span>
-      <h3>Natural Soyabean Milk</h3>
-      <p class="desc">Pure, unflavoured plant milk</p>
-      <div class="price">250 <small>Rs / Liter</small></div>
-      <ul>
-        <li>Fresh daily extraction</li>
-        <li>Pasteurised and hygienically sealed</li>
-        <li>High plant protein, no cholesterol</li>
-        <li>Lactose-free and dairy-free</li>
-        <li>Available in 1 litre bottles</li>
-      </ul>
-      <a href="contact.html" class="btn">Order Now</a>
+      <div class="card-media media-natural">
+        <span class="tag">Best Value</span>
+        <span class="media-name">Natural Soyabean Milk</span>
+      </div>
+      <div class="card-body">
+        <p class="desc">Pure, unflavoured plant milk</p>
+        <div class="price">250 <small>Rs / Liter</small></div>
+        <ul>
+          <li>Fresh daily extraction</li>
+          <li>Pasteurised and hygienically sealed</li>
+          <li>High plant protein, no cholesterol</li>
+          <li>Lactose-free and dairy-free</li>
+          <li>Available in 1 litre bottles</li>
+        </ul>
+        <a href="contact.html" class="btn">Order Now</a>
+      </div>
     </div>
 
     <div class="price-card">
-      <span class="tag blue">Flavoured</span>
-      <h3>Chocolate Soyabean Milk</h3>
-      <p class="desc">Rich cocoa flavour kids love</p>
-      <div class="price">150 <small>Rs / 300 ml</small></div>
-      <ul>
-        <li>Real chocolate taste</li>
-        <li>Perfect lunchbox size</li>
-        <li>Same fresh milk base</li>
-        <li>Great chilled</li>
-        <li>Sealed 300 ml pack</li>
-      </ul>
-      <a href="contact.html" class="btn">Order Now</a>
+      <div class="card-media media-chocolate">
+        <span class="tag blue">Flavoured</span>
+        <span class="media-name">Chocolate Soyabean Milk</span>
+      </div>
+      <div class="card-body">
+        <p class="desc">Rich cocoa flavour kids love</p>
+        <div class="price">150 <small>Rs / 300 ml</small></div>
+        <ul>
+          <li>Real chocolate taste</li>
+          <li>Perfect lunchbox size</li>
+          <li>Same fresh milk base</li>
+          <li>Great chilled</li>
+          <li>Sealed 300 ml pack</li>
+        </ul>
+        <a href="contact.html" class="btn">Order Now</a>
+      </div>
     </div>
 
     <div class="price-card">
-      <span class="tag blue">Flavoured</span>
-      <h3>Elaichi Soyabean Milk</h3>
-      <p class="desc">Classic cardamom aroma</p>
-      <div class="price">150 <small>Rs / 300 ml</small></div>
-      <ul>
-        <li>Traditional elaichi flavour</li>
-        <li>Perfect lunchbox size</li>
-        <li>Same fresh milk base</li>
-        <li>Great chilled or warm</li>
-        <li>Sealed 300 ml pack</li>
-      </ul>
-      <a href="contact.html" class="btn">Order Now</a>
+      <div class="card-media media-elaichi">
+        <span class="tag blue">Flavoured</span>
+        <span class="media-name">Elaichi Soyabean Milk</span>
+      </div>
+      <div class="card-body">
+        <p class="desc">Classic cardamom aroma</p>
+        <div class="price">150 <small>Rs / 300 ml</small></div>
+        <ul>
+          <li>Traditional elaichi flavour</li>
+          <li>Perfect lunchbox size</li>
+          <li>Same fresh milk base</li>
+          <li>Great chilled or warm</li>
+          <li>Sealed 300 ml pack</li>
+        </ul>
+        <a href="contact.html" class="btn">Order Now</a>
+      </div>
     </div>
 
   </div>
