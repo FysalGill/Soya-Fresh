@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing — SoyaFresh Soyabean Milk</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; color: #2c3e2e; line-height: 1.7; }
+  a { text-decoration: none; color: inherit; }
+
+  header {
+    background: #1e5631; color: #fff; padding: 18px 6%;
+    display: flex; justify-content: space-between; align-items: center;
+    position: sticky; top: 0; z-index: 50; flex-wrap: wrap; gap: 12px;
+  }
+  .logo { font-size: 24px; font-weight: 800; letter-spacing: -0.5px; }
+  .logo span { color: #a8d5a2; }
+  nav { display: flex; gap: 10px; flex-wrap: wrap; }
+  nav a { padding: 8px 16px; border-radius: 20px; font-weight: 500; transition: background 0.2s; }
+  nav a:hover, nav a.active { background: rgba(255,255,255,0.18); }
+
+  .page-head {
+    background: linear-gradient(135deg, #1e5631 0%, #2e7d4f 100%);
+    color: #fff; padding: 70px 6% 60px; text-align: center;
+  }
+  .page-head h1 { font-size: clamp(30px, 5vw, 44px); font-weight: 800; letter-spacing: -1px; margin-bottom: 12px; }
+  .page-head p { opacity: 0.92; max-width: 560px; margin: 0 auto; }
+
+  section { padding: 70px 6%; }
+  .section-title { font-size: clamp(24px, 4vw, 34px); font-weight: 800; text-align: center; margin-bottom: 14px; color: #1e5631; }
+  .section-sub { text-align: center; color: #5a6b5c; max-width: 620px; margin: 0 auto 50px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; max-width: 1000px; margin: 0 auto; }
+  .price-card {
+    background: #fff; border: 1px solid #e2ece2; border-radius: 16px; padding: 36px 30px;
+    text-align: center; box-shadow: 0 4px 18px rgba(30,86,49,0.06);
+    transition: transform 0.2s, box-shadow 0.2s; position: relative;
+  }
+  .price-card:hover { transform: translateY(-5px); box-shadow: 0 14px 32px rgba(30,86,49,0.14); }
+  .price-card h3 { color: #1e5631; font-size: 22px; margin-bottom: 6px; }
+  .price-card .desc { color: #6a7a6c; font-size: 14px; margin-bottom: 18px; }
+  .price-card .price { font-size: 44px; font-weight: 800; color: #1e5631; line-height: 1.1; }
+  .price-card .price small { font-size: 17px; font-weight: 600; color: #5a6b5c; }
+  .price-card ul { list-style: none; text-align: left; margin: 24px 0 26px; }
+  .price-card ul li { padding: 8px 0 8px 28px; position: relative; color: #4a5a4c; font-size: 15px; }
+  .price-card ul li::before { content: "✓"; position: absolute; left: 0; color: #2e7d4f; font-weight: 800; }
+  .tag {
+    display: inline-block; background: #ffd66b; color: #6b4e00;
+    font-size: 12px; font-weight: 700; padding: 5px 14px; border-radius: 20px;
+    letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 14px;
+  }
+  .tag.blue { background: #cfe3ff; color: #1a4a8a; }
+
+  .btn {
+    display: inline-block; background: #1e5631; color: #fff;
+    padding: 13px 30px; border-radius: 26px; font-weight: 700; font-size: 15px;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .btn:hover { background: #2e7d4f; transform: translateY(-2px); }
+
+  .alt { background: #f4f9f4; }
+  .info-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; max-width: 1000px; margin: 0 auto; }
+  .info-card { background: #fff; border-radius: 14px; padding: 26px; border: 1px solid #e2ece2; }
+  .info-card h4 { color: #1e5631; font-size: 17px; margin-bottom: 8px; }
+  .info-card p { color: #5a6b5c; font-size: 15px; }
+
+  footer { background: #142e1c; color: #b8c9ba; padding: 36px 6%; text-align: center; font-size: 14px; }
+  footer strong { color: #fff; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Soya<span>Fresh</span></div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="pricing.html" class="active">Pricing</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<div class="page-head">
+  <h1>Simple, Honest Pricing</h1>
+  <p>No hidden charges. Pay for fresh, hygienically packed soyabean milk delivered to your door in Islamabad &amp; Rawalpindi.</p>
+</div>
+
+<section>
+  <h2 class="section-title">Our Products</h2>
+  <p class="section-sub">Natural milk for everyday nutrition, flavoured packs for the family.</p>
+  <div class="grid">
+
+    <div class="price-card">
+      <span class="tag">Best Value</span>
+      <h3>Natural Soyabean Milk</h3>
+      <p class="desc">Pure, unflavoured plant milk</p>
+      <div class="price">250 <small>Rs / Liter</small></div>
+      <ul>
+        <li>Fresh daily extraction</li>
+        <li>Pasteurised and hygienically sealed</li>
+        <li>High plant protein, no cholesterol</li>
+        <li>Lactose-free and dairy-free</li>
+        <li>Available in 1 litre bottles</li>
+      </ul>
+      <a href="contact.html" class="btn">Order Now</a>
+    </div>
+
+    <div class="price-card">
+      <span class="tag blue">Flavoured</span>
+      <h3>Chocolate Soyabean Milk</h3>
+      <p class="desc">Rich cocoa flavour kids love</p>
+      <div class="price">150 <small>Rs / 300 ml</small></div>
+      <ul>
+        <li>Real chocolate taste</li>
+        <li>Perfect lunchbox size</li>
+        <li>Same fresh milk base</li>
+        <li>Great chilled</li>
+        <li>Sealed 300 ml pack</li>
+      </ul>
+      <a href="contact.html" class="btn">Order Now</a>
+    </div>
+
+    <div class="price-card">
+      <span class="tag blue">Flavoured</span>
+      <h3>Elaichi Soyabean Milk</h3>
+      <p class="desc">Classic cardamom aroma</p>
+      <div class="price">150 <small>Rs / 300 ml</small></div>
+      <ul>
+        <li>Traditional elaichi flavour</li>
+        <li>Perfect lunchbox size</li>
+        <li>Same fresh milk base</li>
+        <li>Great chilled or warm</li>
+        <li>Sealed 300 ml pack</li>
+      </ul>
+      <a href="contact.html" class="btn">Order Now</a>
+    </div>
+
+  </div>
+</section>
+
+<section class="alt">
+  <h2 class="section-title">Ordering &amp; Delivery</h2>
+  <p class="section-sub">Everything you need to know before you order.</p>
+  <div class="info-cards">
+    <div class="info-card">
+      <h4>📍 Delivery Areas</h4>
+      <p>We supply across <strong>Islamabad</strong> and <strong>Rawalpindi</strong>, dispatched from our base in Bahria Town, Islamabad.</p>
+    </div>
+    <div class="info-card">
+      <h4>🚚 Delivery Charges</h4>
+      <p>Delivery is free on orders of 5 litres or more. Smaller orders carry a nominal delivery charge confirmed at the time of order.</p>
+    </div>
+    <div class="info-card">
+      <h4>❄️ Freshness Promise</h4>
+      <p>Every order is packed the same day it is made. Keep refrigerated and consume within 3 days for best taste.</p>
+    </div>
+    <div class="info-card">
+      <h4>📦 Bulk &amp; Subscriptions</h4>
+      <p>Running a café, gym, or hostel? Ask us about weekly supply and bulk pricing — message us through the contact page.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><strong>SoyaFresh</strong> — Natural &amp; Flavoured Soyabean Milk</p>
+  <p>Bahria Town, Islamabad · Delivering to Islamabad &amp; Rawalpindi</p>
+</footer>
+
+</body>
+</html>
