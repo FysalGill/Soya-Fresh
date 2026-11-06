@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — SoyaFresh Soyabean Milk</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; color: #2c3e2e; line-height: 1.7; }
+  a { text-decoration: none; color: inherit; }
+
+  header {
+    background: #1e5631; color: #fff; padding: 18px 6%;
+    display: flex; justify-content: space-between; align-items: center;
+    position: sticky; top: 0; z-index: 50; flex-wrap: wrap; gap: 12px;
+  }
+  .logo { font-size: 24px; font-weight: 800; letter-spacing: -0.5px; }
+  .logo span { color: #a8d5a2; }
+  nav { display: flex; gap: 10px; flex-wrap: wrap; }
+  nav a { padding: 8px 16px; border-radius: 20px; font-weight: 500; transition: background 0.2s; }
+  nav a:hover, nav a.active { background: rgba(255,255,255,0.18); }
+
+  .page-head {
+    background: linear-gradient(135deg, #1e5631 0%, #2e7d4f 100%);
+    color: #fff; padding: 70px 6% 60px; text-align: center;
+  }
+  .page-head h1 { font-size: clamp(30px, 5vw, 44px); font-weight: 800; letter-spacing: -1px; margin-bottom: 12px; }
+  .page-head p { opacity: 0.92; max-width: 560px; margin: 0 auto; }
+
+  section { padding: 70px 6%; }
+  .contact-wrap { display: grid; grid-template-columns: 1fr 1.3fr; gap: 44px; max-width: 1050px; margin: 0 auto; }
+  @media (max-width: 780px) { .contact-wrap { grid-template-columns: 1fr; } }
+
+  .info-block { margin-bottom: 26px; }
+  .info-block h4 { color: #1e5631; font-size: 16px; margin-bottom: 6px; }
+  .info-block p { color: #5a6b5c; font-size: 15px; }
+  .info-block a { color: #2e7d4f; font-weight: 600; }
+  .info-block a:hover { text-decoration: underline; }
+
+  .hours { list-style: none; margin-top: 10px; }
+  .hours li { display: flex; justify-content: space-between; padding: 7px 0; font-size: 14px; color: #5a6b5c; border-bottom: 1px dashed #dbe8db; }
+  .hours li span:last-child { font-weight: 600; color: #1e5631; }
+
+  form {
+    background: #fff; border: 1px solid #e2ece2; border-radius: 16px;
+    padding: 34px; box-shadow: 0 4px 18px rgba(30,86,49,0.06);
+  }
+  form h3 { color: #1e5631; font-size: 20px; margin-bottom: 22px; }
+  label { display: block; font-weight: 600; font-size: 14px; color: #1e5631; margin-bottom: 6px; }
+  input, select, textarea {
+    width: 100%; padding: 12px 14px; border: 1.5px solid #d5e3d5; border-radius: 10px;
+    font-family: inherit; font-size: 15px; margin-bottom: 18px; background: #fbfdfb;
+    transition: border-color 0.2s; color: #2c3e2e;
+  }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: #2e7d4f; background: #fff; }
+  textarea { resize: vertical; min-height: 105px; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 520px) { .row { grid-template-columns: 1fr; } }
+  button {
+    width: 100%; background: #1e5631; color: #fff; border: none; padding: 15px;
+    border-radius: 10px; font-size: 16px; font-weight: 700; cursor: pointer;
+    font-family: inherit; transition: background 0.2s;
+  }
+  button:hover { background: #2e7d4f; }
+  button:disabled { opacity: 0.65; cursor: wait; }
+  #formMsg { margin-top: 16px; font-size: 15px; font-weight: 600; text-align: center; display: none; padding: 12px; border-radius: 10px; }
+  .ok { background: #e5f5e5; color: #1e5631; }
+  .err { background: #fdeaea; color: #a32020; }
+
+  footer { background: #142e1c; color: #b8c9ba; padding: 36px 6%; text-align: center; font-size: 14px; }
+  footer strong { color: #fff; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Soya<span>Fresh</span></div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="contact.html" class="active">Contact</a>
+  </nav>
+</header>
+
+<div class="page-head">
+  <h1>Get in Touch</h1>
+  <p>Place an order, ask about bulk supply, or just tell us what you need — we reply the same day.</p>
+</div>
+
+<section>
+  <div class="contact-wrap">
+
+    <div>
+      <div class="info-block">
+        <h4>📍 Our Location</h4>
+        <p>Bahria Town, Islamabad, Pakistan</p>
+      </div>
+      <div class="info-block">
+        <h4>🚚 Delivery Coverage</h4>
+        <p>Islamabad &amp; Rawalpindi — same-day or next-day delivery</p>
+      </div>
+      <div class="info-block">
+        <h4>📞 Phone / WhatsApp</h4>
+        <p><a href="tel:+920000000000">+92 000 0000000</a></p>
+      </div>
+      <div class="info-block">
+        <h4>✉️ Email</h4>
+        <p><a href="mailto:orders@soyafresh.pk">orders@soyafresh.pk</a></p>
+      </div>
+      <div class="info-block">
+        <h4>🕐 Delivery Hours</h4>
+        <ul class="hours">
+          <li><span>Monday – Saturday</span><span>7:00 AM – 8:00 PM</span></li>
+          <li><span>Sunday</span><span>8:00 AM – 2:00 PM</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <form id="orderForm">
+      <h3>Place an Order or Send a Message</h3>
+
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Your name" required>
+
+      <div class="row">
+        <div>
+          <label for="phone">Phone / WhatsApp</label>
+          <input type="tel" id="phone" name="phone" placeholder="03xx xxxxxxx" required>
+        </div>
+        <div>
+          <label for="area">Delivery Area</label>
+          <select id="area" name="area" required>
+            <option value="">Select area</option>
+            <option>Islamabad</option>
+            <option>Rawalpindi</option>
+          </select>
+        </div>
+      </div>
+
+      <label for="product">What would you like?</label>
+      <select id="product" name="product" required>
+        <option value="">Select a product</option>
+        <option>Natural Soyabean Milk — 250 Rs / Liter</option>
+        <option>Chocolate Soyabean Milk — 150 Rs / 300 ml</option>
+        <option>Elaichi Soyabean Milk — 150 Rs / 300 ml</option>
+        <option>Bulk / Weekly Supply</option>
+      </select>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Quantity, delivery address, or any question..."></textarea>
+
+      <button type="submit" id="submitBtn">Send Order Request</button>
+      <div id="formMsg"></div>
+    </form>
+
+  </div>
+</section>
+
+<footer>
+  <p><strong>SoyaFresh</strong> — Natural &amp; Flavoured Soyabean Milk</p>
+  <p>Bahria Town, Islamabad · Delivering to Islamabad &amp; Rawalpindi</p>
+</footer>
+
+<script>
+  const SUPABASE_URL = "__PAKAI_SUPABASE_URL__";
+  const SUPABASE_KEY = "__PAKAI_SUPABASE_ANON_KEY__";
+
+  const form = document.getElementById('orderForm');
+  const msg = document.getElementById('formMsg');
+  const btn = document.getElementById('submitBtn');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    msg.style.display = 'none';
+
+    const data = {
+      name: form.name.value.trim(),
+      phone: form.phone.value.trim(),
+      area: form.area.value,
+      product: form.product.value,
+      message: form.message.value.trim()
+    };
+
+    try {
+      const res = await fetch(`${SUPABASE_URL}/rest/v1/orders`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': SUPABASE_KEY,
+          'Authorization': `Bearer ${SUPABASE_KEY}`,
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify(data)
+      });
+
+      if (!res.ok) throw new Error('Request failed');
+
+      msg.textContent = '✅ Thank you! Your order request has been received. We will contact you shortly.';
+      msg.className = 'ok';
+      msg.style.display = 'block';
+      form.reset();
+    } catch (err) {
+      msg.textContent = '⚠️ Something went wrong. Please try again or call us directly at +92 000 0000000.';
+      msg.className = 'err';
+      msg.style.display = 'block';
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Send Order Request';
+    }
+  });
+</script>
+
+</body>
+</html>
