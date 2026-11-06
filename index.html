@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SoyaFresh — Fresh Soyabean Milk | Islamabad & Rawalpindi</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; color: #2c3e2e; line-height: 1.7; }
+  a { text-decoration: none; color: inherit; }
+
+  header {
+    background: #1e5631; color: #fff; padding: 18px 6%;
+    display: flex; justify-content: space-between; align-items: center;
+    position: sticky; top: 0; z-index: 50; flex-wrap: wrap; gap: 12px;
+  }
+  .logo { font-size: 24px; font-weight: 800; letter-spacing: -0.5px; }
+  .logo span { color: #a8d5a2; }
+  nav { display: flex; gap: 10px; flex-wrap: wrap; }
+  nav a {
+    padding: 8px 16px; border-radius: 20px; font-weight: 500;
+    transition: background 0.2s;
+  }
+  nav a:hover, nav a.active { background: rgba(255,255,255,0.18); }
+
+  .hero {
+    background: linear-gradient(135deg, #1e5631 0%, #2e7d4f 100%);
+    color: #fff; padding: 90px 6% 80px; text-align: center;
+  }
+  .hero h1 { font-size: clamp(32px, 5vw, 52px); font-weight: 800; letter-spacing: -1px; margin-bottom: 18px; }
+  .hero p { font-size: clamp(16px, 2vw, 20px); max-width: 640px; margin: 0 auto 32px; opacity: 0.92; }
+  .btn {
+    display: inline-block; background: #a8d5a2; color: #1e5631;
+    padding: 14px 34px; border-radius: 30px; font-weight: 700; font-size: 17px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.25); }
+
+  section { padding: 70px 6%; }
+  .section-title { font-size: clamp(26px, 4vw, 38px); font-weight: 800; text-align: center; margin-bottom: 14px; color: #1e5631; }
+  .section-sub { text-align: center; color: #5a6b5c; max-width: 620px; margin: 0 auto 50px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; max-width: 1100px; margin: 0 auto; }
+  .card {
+    background: #fff; border: 1px solid #e2ece2; border-radius: 16px; padding: 32px 26px;
+    box-shadow: 0 4px 18px rgba(30,86,49,0.06); transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(30,86,49,0.12); }
+  .card .icon { font-size: 34px; margin-bottom: 14px; }
+  .card h3 { color: #1e5631; font-size: 20px; margin-bottom: 10px; }
+  .card p { color: #5a6b5c; font-size: 15px; }
+
+  .alt { background: #f4f9f4; }
+
+  .price-card { text-align: center; position: relative; }
+  .price-card .price { font-size: 40px; font-weight: 800; color: #1e5631; margin: 16px 0 4px; }
+  .price-card .price small { font-size: 16px; font-weight: 600; color: #5a6b5c; }
+  .price-card ul { list-style: none; text-align: left; margin: 22px 0; }
+  .price-card ul li { padding: 8px 0 8px 28px; position: relative; color: #4a5a4c; font-size: 15px; }
+  .price-card ul li::before { content: "✓"; position: absolute; left: 0; color: #2e7d4f; font-weight: 800; }
+  .tag {
+    display: inline-block; background: #ffd66b; color: #6b4e00;
+    font-size: 12px; font-weight: 700; padding: 5px 14px; border-radius: 20px;
+    letter-spacing: 0.5px; text-transform: uppercase;
+  }
+  .tag.blue { background: #cfe3ff; color: #1a4a8a; }
+
+  .contact-wrap { display: grid; grid-template-columns: 1fr 1.3fr; gap: 40px; max-width: 1050px; margin: 0 auto; }
+  @media (max-width: 760px) { .contact-wrap { grid-template-columns: 1fr; } }
+
+  .info-block { margin-bottom: 26px; }
+  .info-block h4 { color: #1e5631; font-size: 16px; margin-bottom: 6px; }
+  .info-block p { color: #5a6b5c; font-size: 15px; }
+
+  form { background: #fff; border: 1px solid #e2ece2; border-radius: 16px; padding: 32px; box-shadow: 0 4px 18px rgba(30,86,49,0.06); }
+  label { display: block; font-weight: 600; font-size: 14px; color: #1e5631; margin-bottom: 6px; }
+  input, select, textarea {
+    width: 100%; padding: 12px 14px; border: 1.5px solid #d5e3d5; border-radius: 10px;
+    font-family: inherit; font-size: 15px; margin-bottom: 18px; background: #fbfdfb;
+    transition: border-color 0.2s;
+  }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: #2e7d4f; background: #fff; }
+  textarea { resize: vertical; min-height: 100px; }
+  button {
+    width: 100%; background: #1e5631; color: #fff; border: none;
+    padding: 15px; border-radius: 10px; font-size: 16px; font-weight: 700;
+    cursor: pointer; font-family: inherit; transition: background 0.2s;
+  }
+  button:hover { background: #2e7d4f; }
+  #formMsg { margin-top: 16px; font-size: 15px; font-weight: 600; text-align: center; display: none; }
+
+  footer {
+    background: #142e1c; color: #b8c9ba; padding: 36px 6%; text-align: center; font-size: 14px;
+  }
+  footer strong { color: #fff; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Soya<span>Fresh</span></div>
+  <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1>Fresh Soyabean Milk, Made Daily</h1>
+  <p>Pure plant-based nutrition extracted from premium soyabeans — hygienically processed, properly packaged, and delivered fresh across Islamabad &amp; Rawalpindi.</p>
+  <a href="pricing.html" class="btn">See Our Prices</a>
+</div>
+
+<section>
+  <h2 class="section-title">Why SoyaFresh?</h2>
+  <p class="section-sub">We control every step — from bean to bottle — so you get milk that's genuinely fresh, safe, and full of protein.</p>
+  <div class="grid">
+    <div class="card">
+      <div class="icon">🌱</div>
+      <h3>Fresh Daily Extraction</h3>
+      <p>Milk is extracted from selected soyabeans every morning. No stale stock, no long storage — what you receive was made hours ago.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🧼</div>
+      <h3>Health &amp; Hygiene First</h3>
+      <p>Full pasteurisation, sterilised equipment, and food-grade handling at every stage. Our process meets food safety standards.</p>
+    </div>
+    <div class="card">
+      <div class="icon">📦</div>
+      <h3>Proper Packaging</h3>
+      <p>Sealed, tamper-proof bottles and packs that lock in freshness and keep the milk safe from source to doorstep.</p>
+    </div>
+    <div class="card">
+      <div class="icon">💪</div>
+      <h3>High Protein, No Cholesterol</h3>
+      <p>A naturally dairy-free, lactose-free alternative packed with plant protein — ideal for fitness, kids, and daily health.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🍫</div>
+      <h3>Flavours Kids Love</h3>
+      <p>Chocolate and Elaichi flavoured milk in handy 300 ml packs — the easy way to get nutrition into fussy eaters.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🚚</div>
+      <h3>Local Delivery</h3>
+      <p>Based in Bahria Town, we deliver across Islamabad and Rawalpindi with same-day and next-day options.</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <h2 class="section-title">From Bean to Bottle</h2>
+  <p class="section-sub">Four clean steps — the reason our milk tastes fresh and stays safe.</p>
+  <div class="grid">
+    <div class="card">
+      <div class="icon">1️⃣</div>
+      <h3>Bean Selection</h3>
+      <p>Only clean, high-grade soyabeans pass inspection. Damaged or poor-quality beans are rejected before processing.</p>
+    </div>
+    <div class="card">
+      <div class="icon">2️⃣</div>
+      <h3>Soaking &amp; Grinding</h3>
+      <p>Beans are soaked and ground under hygienic conditions to draw out maximum nutrition and a smooth texture.</p>
+    </div>
+    <div class="card">
+      <div class="icon">3️⃣</div>
+      <h3>Pasteurisation</h3>
+      <p>The extracted milk is heated to safe temperatures, eliminating harmful bacteria while preserving taste and nutrients.</p>
+    </div>
+    <div class="card">
+      <div class="icon">4️⃣</div>
+      <h3>Sealed Packaging</h3>
+      <p>Filled into sterilised, sealed containers and chilled immediately — then dispatched straight to your door.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><strong>SoyaFresh</strong> — Natural &amp; Flavoured Soyabean Milk</p>
+  <p>Bahria Town, Islamabad · Delivering to Islamabad &amp; Rawalpindi</p>
+</footer>
+
+</body>
+</html>
